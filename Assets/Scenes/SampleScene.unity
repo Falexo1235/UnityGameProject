@@ -351,9 +351,10 @@ GameObject:
   - component: {fileID: 1204485597}
   - component: {fileID: 1204485596}
   - component: {fileID: 1204485595}
+  - component: {fileID: 1204485598}
   m_Layer: 0
   m_Name: floor
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -468,12 +469,39 @@ Transform:
   m_GameObject: {fileID: 1204485594}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03307, y: -4.64, z: 0}
+  m_LocalPosition: {x: -0.03307, y: -3.54, z: 0}
   m_LocalScale: {x: 18.6, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1204485598
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204485594}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1896409096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -506,6 +534,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ragdoll
       objectReference: {fileID: 0}
+    - target: {fileID: 2199517190444530707, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
+      propertyPath: grabForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2199517190444530707, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
+      propertyPath: grabDistance
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2773291868048194729, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -0.29295412
@@ -513,6 +549,14 @@ PrefabInstance:
     - target: {fileID: 4112222446595094514, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 0.38863975
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538302444739141048, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
+      propertyPath: grabForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538302444739141048, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
+      propertyPath: grabDistance
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7482560929749420159, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
       propertyPath: m_LocalPosition.x

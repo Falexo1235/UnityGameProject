@@ -185,10 +185,10 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: -150
+    m_UpperAngle: 150
 --- !u!1 &786393783967355830
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,10 +374,10 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: -150
+    m_UpperAngle: 150
 --- !u!1 &1740890942785514367
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5161682246326657220}
+  - component: {fileID: 7524241463043993811}
   m_Layer: 0
   m_Name: LL_End
   m_TagString: Untagged
@@ -450,6 +451,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3328528546451797362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &7524241463043993811
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773251554184450790}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
 --- !u!1 &2125229327868564930
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +501,7 @@ GameObject:
   - component: {fileID: 1804481547832399453}
   - component: {fileID: 3272399463117667269}
   - component: {fileID: 1525788741589489772}
+  - component: {fileID: 2199517190444530707}
   m_Layer: 0
   m_Name: RL_Arm
   m_TagString: Untagged
@@ -658,6 +696,22 @@ MonoBehaviour:
   controlButton: 324
   startPoint: {fileID: 6481819886682469696}
   reverseEndPoint: 0
+--- !u!114 &2199517190444530707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125229327868564930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e2b3de77205854c85338151f9c30f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabKey: 101
+  grabTrigger: {fileID: 3833219128644558617}
+  grabDistance: 0.3
+  grabForce: 100
 --- !u!1 &2414765441942721097
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,10 +897,10 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: -150
+    m_UpperAngle: 150
 --- !u!1 &2964832549346520509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,10 +1117,10 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: -150
+    m_UpperAngle: 150
 --- !u!1 &3762687587242071779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,6 +1135,7 @@ GameObject:
   - component: {fileID: 4885419686447839112}
   - component: {fileID: 734828691466330333}
   - component: {fileID: 4787078686556112554}
+  - component: {fileID: 6538302444739141048}
   m_Layer: 0
   m_Name: LL_Arm
   m_TagString: Untagged
@@ -1275,6 +1330,22 @@ MonoBehaviour:
   controlButton: 323
   startPoint: {fileID: 5161682246326657220}
   reverseEndPoint: 1
+--- !u!114 &6538302444739141048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762687587242071779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e2b3de77205854c85338151f9c30f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabKey: 113
+  grabTrigger: {fileID: 7524241463043993811}
+  grabDistance: 0.3
+  grabForce: 100
 --- !u!1 &3907226015031456030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,6 +1756,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6481819886682469696}
+  - component: {fileID: 3833219128644558617}
   m_Layer: 0
   m_Name: RL_End
   m_TagString: Untagged
@@ -1707,6 +1779,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5811194365987174829}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &3833219128644558617
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6907262767595641135}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
 --- !u!1 &7334589256712501438
 GameObject:
   m_ObjectHideFlags: 0
