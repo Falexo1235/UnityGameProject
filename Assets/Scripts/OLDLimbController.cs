@@ -1,5 +1,5 @@
 using UnityEngine;
-//Можно будет использовать для манипуляторов, тут держится угол шарнира
+//Can be used as a base for manipilator in the future
 public class OLDLimbControlScript : MonoBehaviour
 {
     public float motorSpeed = 200f;

@@ -665,6 +665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabKey: 101
   grabTrigger: {fileID: 942551760630679712}
+  grabSocket: {fileID: 5181942547596649427}
   grabDistance: 0.3
   grabForce: 100
 --- !u!70 &6792750027567260335
@@ -1290,6 +1291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabKey: 113
   grabTrigger: {fileID: 7524241463043993811}
+  grabSocket: {fileID: 5161682246326657220}
   grabDistance: 0.3
   grabForce: 100
 --- !u!70 &1635543831620293733
