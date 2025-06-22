@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Drill : MonoBehaviour, IUsableItem
+public class DrillScript : MonoBehaviour, IUsableItem
 {
     [Header("Drill Settings")]
     public float drillSpeed = 1f;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SmoothCamera : MonoBehaviour
+public class SmoothCameraScript : MonoBehaviour
 {
     public Transform target;
     public float smoothTime = 0.3F;

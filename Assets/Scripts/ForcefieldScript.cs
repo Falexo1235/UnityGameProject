@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 //Had to rip the shield script in 2 parts due to the "OnCollisionEnter" inner workings. Much easier that way. 
-public class Forcefield : MonoBehaviour
+public class ForcefieldScript : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {

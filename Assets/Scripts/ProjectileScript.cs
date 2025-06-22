@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class ProjectileScript : MonoBehaviour
 {
     public float speed = 20f;
     public float lifetime = 5f;
@@ -24,6 +24,11 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        ProjectileInteractable hitScript = collision.GetComponent<ProjectileInteractable>();
+        if (hitScript != null)
+        {
+            hitScript.Activate();
+        }
         Destroy(gameObject);
     }
 } 

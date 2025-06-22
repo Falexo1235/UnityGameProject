@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Shield : MonoBehaviour, IUsableItem
+public class ShieldScript : MonoBehaviour, IUsableItem
 {
     public GameObject forceField;
     
@@ -20,7 +20,7 @@ public class Shield : MonoBehaviour, IUsableItem
     {
         if (itemIndex == -1 || !forceField.activeSelf) return;
 
-        float currentCharge = Inventory.Instance.GetCharge(itemIndex);
+        float currentCharge = InventoryScript.Instance.GetCharge(itemIndex);
         currentCharge -= drainRate * Time.deltaTime;
 
         if (currentCharge <= 0)
@@ -29,12 +29,12 @@ public class Shield : MonoBehaviour, IUsableItem
             forceField.SetActive(false);
         }
         
-        Inventory.Instance.SetCharge(itemIndex, currentCharge);
+        InventoryScript.Instance.SetCharge(itemIndex, currentCharge);
     }
 
     public void UseStart()
     {
-        if (Inventory.Instance.GetCharge(itemIndex) > 0)
+        if (InventoryScript.Instance.GetCharge(itemIndex) > 0)
         {
             forceField.SetActive(true);
         }

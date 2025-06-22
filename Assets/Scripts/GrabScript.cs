@@ -11,12 +11,12 @@ public class GrabScript : MonoBehaviour
     private GameObject grabbedObject;
     private DistanceJoint2D grabJoint;
     private bool isGrabbing;
-    private Inventory inventory;
+    private InventoryScript inventory;
     private IUsableItem currentUsableItem;
 
     void Start()
     {
-        inventory = Inventory.Instance;
+        inventory = InventoryScript.Instance;
         if (inventory == null)
         {
             Debug.LogError("Inventory instance not found!");

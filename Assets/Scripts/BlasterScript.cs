@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Blaster : MonoBehaviour, IUsableItem
+public class BlasterScript : MonoBehaviour, IUsableItem
 {
     [Header("Shooting")]
     public float projectileSpeed = 20f;
@@ -34,7 +34,7 @@ public class Blaster : MonoBehaviour, IUsableItem
         Vector2 fireDirection = firePoint.right;
 
         GameObject projectileObj = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-        Projectile projectile = projectileObj.GetComponent<Projectile>();
+        ProjectileScript projectile = projectileObj.GetComponent<ProjectileScript>();
         
         if (projectile != null)
         {

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class InventoryScript : MonoBehaviour
 {
-    public static Inventory Instance { get; private set; }
+    public static InventoryScript Instance { get; private set; }
 
     [Header("Hand References")]
     public Transform leftHandSocket;
@@ -105,18 +105,29 @@ public class Inventory : MonoBehaviour
                 newItem.transform.localScale = scale;
 
                 //Scaling didn't change firePoint direction, had to change it manually
-                Blaster blaster = newItem.GetComponent<Blaster>();
+                BlasterScript blaster = newItem.GetComponent<BlasterScript>();
                 if (blaster != null && blaster.firePoint != null)
                 {
                     blaster.firePoint.localRotation = Quaternion.Euler(0, 180, 0);
                 }
+
+                LaserGunScript laserGun1 = newItem.GetComponent<LaserGunScript>();
+                if (laserGun1 != null && laserGun1.laserBeam != null)
+                {
+                    laserGun1.laserBeam.transform.localRotation = Quaternion.Euler(0, 180, 0);
+                }
             }
 
             //If it's a shield, put itemIndex in it for charge management
-            Shield shield = newItem.GetComponent<Shield>();
+            ShieldScript shield = newItem.GetComponent<ShieldScript>();
             if (shield != null)
             {
                 shield.itemIndex = currentItemIndex;
+            }
+            LaserGunScript laserGun = newItem.GetComponent<LaserGunScript>();
+            if (laserGun != null)
+            {
+                laserGun.itemIndex = currentItemIndex;
             }
 
             FixedJoint2D joint = newItem.AddComponent<FixedJoint2D>();
@@ -229,7 +240,7 @@ public class Inventory : MonoBehaviour
                 {
                     //I don't know if it's better than just putting recharge script in the item itself,
                     //But that way at least charge speed is consistent.
-                    Shield shield = currentItemObject.GetComponent<Shield>();
+                    ShieldScript shield = currentItemObject.GetComponent<ShieldScript>();
                     //Might change "shield.forceField.activeSelf" with a simple bool inside an item if problems arise.
                     if (shield != null && shield.forceField.activeSelf)
                     {

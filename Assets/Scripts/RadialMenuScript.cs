@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class RadialMenu : MonoBehaviour
+public class RadialMenuScript : MonoBehaviour
 {
     public GameObject menuUI;
     public int slotCount = 8;
@@ -54,9 +54,9 @@ public class RadialMenu : MonoBehaviour
 
     void SelectItem(int slot)
     {
-        if (Inventory.Instance != null)
+        if (InventoryScript.Instance != null)
         {
-            Inventory.Instance.EquipItem(slot);
+            InventoryScript.Instance.EquipItem(slot);
         }
         else
         {
