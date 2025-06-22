@@ -108,7 +108,7 @@ public class InventoryScript : MonoBehaviour
                 BlasterScript blaster = newItem.GetComponent<BlasterScript>();
                 if (blaster != null && blaster.firePoint != null)
                 {
-                    blaster.firePoint.localRotation = Quaternion.Euler(0, 180, 0);
+                    blaster.firePoint.localRotation = Quaternion.Euler(0, 0, 180);
                 }
 
                 LaserGunScript laserGun1 = newItem.GetComponent<LaserGunScript>();
