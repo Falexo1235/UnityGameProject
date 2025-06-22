@@ -11,6 +11,7 @@ public class Inventory : MonoBehaviour
     [Header("Items")]
     //Do not put useful items in index 0, that index is used to select hands
     public GameObject[] availableItems;
+    public float[] maxItemCharges; //Max charge for each item. Easier to do it that way, than to try finding out if an item has charge
     
     private GameObject leftHandItem;
     private GameObject rightHandItem;
@@ -19,12 +20,24 @@ public class Inventory : MonoBehaviour
     
     private Collider2D leftHandCollider;
     private Collider2D rightHandCollider;
+
+    private float[] currentItemCharges; //Current item charges
     
     private void Awake()
     {
         Instance = this;
         leftHandCollider = leftHandSocket.GetComponent<Collider2D>();
         rightHandCollider = rightHandSocket.GetComponent<Collider2D>();
+
+        //All items are fully charged at the start of the level
+        if (availableItems.Length > 0 && maxItemCharges.Length == availableItems.Length)
+        {
+            currentItemCharges = new float[availableItems.Length];
+            for (int i = 0; i < maxItemCharges.Length; i++)
+            {
+                currentItemCharges[i] = maxItemCharges[i];
+            }
+        }
     }
 
     private void Update()
@@ -33,7 +46,11 @@ public class Inventory : MonoBehaviour
         {
             SwitchActiveHand();
         }
+
+        RegenerateAllItemCharges();
     }
+
+    
 
     private void UpdateHandColliders()
     {
@@ -94,6 +111,14 @@ public class Inventory : MonoBehaviour
                     blaster.firePoint.localRotation = Quaternion.Euler(0, 180, 0);
                 }
             }
+
+            //If it's a shield, put itemIndex in it for charge management
+            Shield shield = newItem.GetComponent<Shield>();
+            if (shield != null)
+            {
+                shield.itemIndex = currentItemIndex;
+            }
+
             FixedJoint2D joint = newItem.AddComponent<FixedJoint2D>();
             Rigidbody2D handRb = null;
             if (activeSocket.parent != null)
@@ -166,4 +191,59 @@ public class Inventory : MonoBehaviour
         Debug.LogError("Wrong hand transform");
         return null;
     }
+
+    //New charge management functions
+
+    public float GetCharge(int itemIndex)
+    {
+        if (itemIndex > 0 && itemIndex < currentItemCharges.Length)
+        {
+            return currentItemCharges[itemIndex];
+        }
+        return 0f;
+    }
+
+    public void SetCharge(int itemIndex, float value)
+    {
+        if (itemIndex > 0 && itemIndex < currentItemCharges.Length)
+        {
+            currentItemCharges[itemIndex] = value;
+        }
+    }
+    private void RegenerateAllItemCharges()
+    {
+        if (currentItemCharges == null || currentItemCharges.Length == 0) return;
+
+        for (int i = 0; i < currentItemCharges.Length; i++)
+        {
+            if (maxItemCharges[i] > 0)
+            {
+                bool itemIsInUse = false;
+                GameObject currentItemObject = null;
+                if (currentItemIndex == i)
+                {
+                    currentItemObject = isRightHandActive ? rightHandItem : leftHandItem;
+                }
+
+                if (currentItemObject != null)
+                {
+                    //I don't know if it's better than just putting recharge script in the item itself,
+                    //But that way at least charge speed is consistent.
+                    Shield shield = currentItemObject.GetComponent<Shield>();
+                    //Might change "shield.forceField.activeSelf" with a simple bool inside an item if problems arise.
+                    if (shield != null && shield.forceField.activeSelf)
+                    {
+                        itemIsInUse = true;
+                    }
+                }
+                if (!itemIsInUse && currentItemCharges[i] < maxItemCharges[i])
+                {
+                    float regenRate = 0.5f;
+                    currentItemCharges[i] += regenRate * Time.deltaTime;
+                    currentItemCharges[i] = Mathf.Clamp(currentItemCharges[i], 0, maxItemCharges[i]);
+                }
+            }
+        }
+    }
 } 
+
