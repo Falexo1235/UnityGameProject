@@ -51,7 +51,7 @@ public class Drill : MonoBehaviour, IUsableItem
         
         foreach (Collider2D col in colliders)
         {
-            if (col != null && col.CompareTag("Drillable"))
+            if (col != null && col.GetComponent<Drillable>() != null)
             {
                 Destroy(col.gameObject);
             }

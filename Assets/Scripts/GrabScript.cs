@@ -42,9 +42,7 @@ public class GrabScript : MonoBehaviour
 
         foreach (Collider2D col in colliders)
         {
-            //All tag usage needs to be replaced with something else,
-            //unity devs still didn't add multiple tags per object
-            if (col.CompareTag("Grabbable"))
+            if (col.GetComponent<Ungrabbable>() == null)
             {
                 Vector2 closestPointOnCollider = col.ClosestPoint(transform.position);
                 float dist = Vector2.Distance(transform.position, closestPointOnCollider);
