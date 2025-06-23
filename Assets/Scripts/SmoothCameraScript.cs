@@ -8,10 +8,20 @@ public class SmoothCameraScript : MonoBehaviour
     private Vector3 cameraOffset = -Vector3.forward;
     private bool rotating = false;
     private Quaternion targetRotation;
+    //For the missile mazes
+    [HideInInspector]
+    public float targetZoom;
+    private Camera selfCamera;
+    private void Start()
+    {
+        selfCamera = gameObject.GetComponent<Camera>();
+        targetZoom = selfCamera.orthographicSize;
+    }
     void Update()
     {
         Vector3 targetPosition = target.position + cameraOffset;
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+        selfCamera.orthographicSize = Mathf.Lerp(selfCamera.orthographicSize, targetZoom, Time.deltaTime * 5f);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
