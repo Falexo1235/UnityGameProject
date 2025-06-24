@@ -401,7 +401,7 @@ MonoBehaviour:
   rightHandSocket: {fileID: 113793718}
   availableItems:
   - {fileID: 4317846460479348863, guid: 31a3e03d90beb404ea1ee40313d792ba, type: 3}
-  - {fileID: 1597645015243423428, guid: 378bf4c68878f1946ad77b647b719935, type: 3}
+  - {fileID: 5806216140286730212, guid: 6529f5a57ff668d4aadf74dedf96c336, type: 3}
   - {fileID: 2554825018900560140, guid: b0682924c98f55e4aa565f7bd318df8b, type: 3}
   - {fileID: 5806216140286730212, guid: 460c1799421d9214d98d9a35d3c3a82e, type: 3}
   - {fileID: 5806216140286730212, guid: d4a8b52b52d01b34d90c36336040b9fc, type: 3}
@@ -441,6 +441,8 @@ GameObject:
   - component: {fileID: 367482156}
   - component: {fileID: 367482155}
   - component: {fileID: 367482159}
+  - component: {fileID: 367482160}
+  - component: {fileID: 367482161}
   m_Layer: 0
   m_Name: Drillable (1)
   m_TagString: Drillable
@@ -608,6 +610,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3424038b73a65740b5203166272261f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &367482160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367482154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f7d1596c5ed9041a0eb25e54412a4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnProjectileHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 367482161}
+        m_TargetAssemblyTypeName: TestProjectileScript, Assembly-CSharp
+        m_MethodName: changeColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &367482161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367482154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1af98e77337fee4aa7066cf35d2ce91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &451059813
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,6 +662,8 @@ GameObject:
   - component: {fileID: 451059815}
   - component: {fileID: 451059814}
   - component: {fileID: 451059818}
+  - component: {fileID: 451059820}
+  - component: {fileID: 451059819}
   m_Layer: 0
   m_Name: Drillable
   m_TagString: Drillable
@@ -786,6 +829,45 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3424038b73a65740b5203166272261f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &451059819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451059813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce9337ed6702ae44b88e2566818cdb6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMissileHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 451059820}
+        m_TargetAssemblyTypeName: TestProjectileScript, Assembly-CSharp
+        m_MethodName: changeColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &451059820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451059813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1af98e77337fee4aa7066cf35d2ce91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &487962859 stripped
@@ -965,6 +1047,10 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: -0.5427516
       objectReference: {fileID: 0}
+    - target: {fileID: 1525788741589489772, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
+      propertyPath: accelerationTorque
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1646058142982062841, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: 0.01218546
@@ -988,6 +1074,14 @@ PrefabInstance:
     - target: {fileID: 2125229327868564930, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308237084919358674, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308237084919358674, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
+      propertyPath: orthographic size
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2414765441942721097, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
       propertyPath: m_Layer
@@ -1021,9 +1115,21 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.x
       value: 0.54442734
       objectReference: {fileID: 0}
+    - target: {fileID: 4221576748243808817, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
+      propertyPath: accelerationTorque
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4464442007423977948, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787078686556112554, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
+      propertyPath: accelerationTorque
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812887443037827763, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
+      propertyPath: accelerationTorque
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5571946092376182607, guid: 4dff0bae1a8e2a149899fea04b133e78, type: 3}
       propertyPath: m_Layer
@@ -1556,6 +1662,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f9eb45a03603ab4786c20fdf7603ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1494778488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1494778492}
+  - component: {fileID: 1494778491}
+  - component: {fileID: 1494778490}
+  m_Layer: 0
+  m_Name: MissileSlowmo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1494778490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494778488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0099ec3caa47a404fb93976c51068c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missileSpeedMultiplier: 0.5
+  zoomMultiplier: 2
+--- !u!61 &1494778491
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494778488}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 4.3644147, y: 10.168124}
+  m_EdgeRadius: 0
+--- !u!4 &1494778492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494778488}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17.41, y: -0.60621, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1747236887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,3 +2166,4 @@ SceneRoots:
   - {fileID: 451059817}
   - {fileID: 1747236891}
   - {fileID: 367482158}
+  - {fileID: 1494778492}
