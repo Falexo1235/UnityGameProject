@@ -401,11 +401,11 @@ MonoBehaviour:
   rightHandSocket: {fileID: 113793718}
   availableItems:
   - {fileID: 4317846460479348863, guid: 31a3e03d90beb404ea1ee40313d792ba, type: 3}
-  - {fileID: 5806216140286730212, guid: 6529f5a57ff668d4aadf74dedf96c336, type: 3}
-  - {fileID: 2554825018900560140, guid: b0682924c98f55e4aa565f7bd318df8b, type: 3}
   - {fileID: 5806216140286730212, guid: 460c1799421d9214d98d9a35d3c3a82e, type: 3}
-  - {fileID: 5806216140286730212, guid: d4a8b52b52d01b34d90c36336040b9fc, type: 3}
+  - {fileID: 2554825018900560140, guid: b0682924c98f55e4aa565f7bd318df8b, type: 3}
   - {fileID: 1597645015243423428, guid: 378bf4c68878f1946ad77b647b719935, type: 3}
+  - {fileID: 5806216140286730212, guid: d4a8b52b52d01b34d90c36336040b9fc, type: 3}
+  - {fileID: 5806216140286730212, guid: 6529f5a57ff668d4aadf74dedf96c336, type: 3}
   maxItemCharges:
   - 0
   - 5
