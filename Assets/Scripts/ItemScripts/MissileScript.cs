@@ -10,6 +10,8 @@ public class MissileScript : MonoBehaviour
     public float maxSpeed = 10f;
     public float lifetime = 10f;
     public float lifetimeDecayMultiplier = 1f;
+    public AudioClip launchSound;
+    public AudioClip bounceSound;
     
     [Header("Maze Mode")]
     public float bounceForce = 5f;
@@ -18,6 +20,7 @@ public class MissileScript : MonoBehaviour
     [Header("Explosion settings")]
     public AnimationClip explosionClip;
     public GameObject explosionPrefab;
+    public AudioClip explosionSound;
 
     private Rigidbody2D rb;
     private Camera mainCamera;
@@ -40,6 +43,7 @@ public class MissileScript : MonoBehaviour
 
     void Start()
     {
+        GetComponent<AudioSource>().PlayOneShot(launchSound);
         rb = GetComponent<Rigidbody2D>();
         mainCamera = Camera.main;
         originalThrustForce = thrustForce;
@@ -60,7 +64,7 @@ public class MissileScript : MonoBehaviour
         if (lifetime <= 0)
         {
             GameObject explosion = Instantiate(explosionPrefab, transform.position + animationOffset, Quaternion.identity);
-            explosion.GetComponent<ExplosionVisualScript>().Playexplosion(explosionClip);
+            explosion.GetComponent<ExplosionScript>().Playexplosion(explosionClip, explosionSound);
             Destroy(gameObject);
             return;
         }
@@ -96,18 +100,19 @@ public class MissileScript : MonoBehaviour
             rb.linearVelocity = reflectDirection * bounceForce;
             
             lifetime = Mathf.Max(0, lifetime - mazeLifetimeReduction);
+            GetComponent<AudioSource>().PlayOneShot(bounceSound);
             Debug.Log(lifetime);
             if (lifetime <= 0)
             {
                 GameObject explosion = Instantiate(explosionPrefab, transform.position + animationOffset, Quaternion.identity);
-                explosion.GetComponent<ExplosionVisualScript>().Playexplosion(explosionClip);
+                explosion.GetComponent<ExplosionScript>().Playexplosion(explosionClip, explosionSound);
                 Destroy(gameObject);
             }
         }
         else
         {
             GameObject explosion = Instantiate(explosionPrefab, transform.position + animationOffset, Quaternion.identity);
-            explosion.GetComponent<ExplosionVisualScript>().Playexplosion(explosionClip);
+            explosion.GetComponent<ExplosionScript>().Playexplosion(explosionClip, explosionSound);
             Destroy(gameObject);
         }
     }

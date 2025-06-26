@@ -6,8 +6,7 @@ public class DrillScript : MonoBehaviour, IUsableItem
     public float drillSpeed = 1f;
     public Collider2D drillTrigger;
     public Animator drillAnimator;
-
-    private bool isDrilling = false;
+    public DrillEffectScript drillEffect;
     private float nextDrillTime;
 
     void Start()
@@ -16,39 +15,24 @@ public class DrillScript : MonoBehaviour, IUsableItem
     }
     public void UseStart()
     {
+        nextDrillTime = Time.time + (1f / drillSpeed);
+        drillAnimator.speed = 2;
+        drillEffect.OnDrillStart();
     }
 
     public void UseHold()
     {
-        if (!isDrilling)
-        {
-            StartDrilling();
-        }
         TryDrill();
     }
 
     public void UseEnd()
     {
-        StopDrilling();
-    }
-
-    private void StartDrilling()
-    {
-        isDrilling = true;
-        nextDrillTime = Time.time;
-        drillAnimator.speed = 2;
-    }
-
-    private void StopDrilling()
-    {
-        isDrilling = false;
         drillAnimator.speed = 0;
+        drillEffect.OnDrillEnd();
     }
 
     private void TryDrill()
     {
-        //Add particle generation before that check, they need to appear when any collision is triggered
-        //Also needs something to prevent the drill from triggering itself with a collider
         if (Time.time < nextDrillTime)
             return;
 
@@ -61,6 +45,7 @@ public class DrillScript : MonoBehaviour, IUsableItem
             if (col != null && col.GetComponent<Drillable>() != null)
             {
                 Destroy(col.gameObject);
+                drillEffect.OnDrillHit();
             }
         }
     }

@@ -3,7 +3,6 @@ using UnityEngine;
 public class BlasterScript : MonoBehaviour, IUsableItem
 {
     [Header("Shooting")]
-    public float projectileSpeed = 20f;
     //Can be used as a base for new tools, like using missiles that follow cursor
     public GameObject projectilePrefab;  
     public Transform firePoint;
@@ -31,15 +30,6 @@ public class BlasterScript : MonoBehaviour, IUsableItem
             return;
         nextFireTime = Time.time + fireRate;
 
-        Vector2 fireDirection = firePoint.right;
-
         GameObject projectileObj = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-        ProjectileScript projectile = projectileObj.GetComponent<ProjectileScript>();
-        
-        if (projectile != null)
-        {
-            projectile.speed = projectileSpeed;
-            projectile.Initialize(fireDirection);
-        }
     }
 } 

@@ -7,15 +7,19 @@ public class GrabScript : MonoBehaviour
     public Transform grabSocket;
     public float grabDistance = 0.5f;
     public float grabForce = 100f;
+    public ControlSpritesScript spriteScript;
+    public AudioClip grabSound;
+    public AudioClip ungrabSound;
 
     private GameObject grabbedObject;
     private DistanceJoint2D grabJoint;
     private bool isGrabbing;
     private InventoryScript inventory;
     private IUsableItem currentUsableItem;
-
+    private AudioSource audioSource;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         inventory = InventoryScript.Instance;
         if (inventory == null)
         {
@@ -34,7 +38,7 @@ public class GrabScript : MonoBehaviour
         {
             return;
         }
-
+        spriteScript.SetColor(1);
         Collider2D[] colliders = Physics2D.OverlapCircleAll(grabTrigger.bounds.center, grabDistance);
         float closestDist = Mathf.Infinity;
         GameObject closestObj = null;
@@ -72,6 +76,8 @@ public class GrabScript : MonoBehaviour
             grabJoint.autoConfigureDistance = false;
             grabJoint.enableCollision = true;
             isGrabbing = true;
+            spriteScript.SetColor(2);
+            audioSource.PlayOneShot(grabSound);
         }
     }
 
@@ -84,6 +90,7 @@ public class GrabScript : MonoBehaviour
                 Destroy(grabJoint.connectedBody.gameObject);
             }
             Destroy(grabJoint);
+            audioSource.PlayOneShot(ungrabSound);
         }
         grabbedObject = null;
         isGrabbing = false;
@@ -135,6 +142,8 @@ public class GrabScript : MonoBehaviour
             {
                 ReleaseObj();
             }
+            spriteScript.SetColor(0);
+
         }
     }
 }

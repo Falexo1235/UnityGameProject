@@ -3,23 +3,19 @@ using UnityEngine;
 public class ProjectileScript : MonoBehaviour
 {
     public float speed = 20f;
-    public float lifetime = 5f;
+    public float lifetime = 15f;
     public float damage = 10f;
     public GameObject explosionPrefab;
-    public AnimationClip explosionClip;
     public AnimationClip hitClip;
+    public AudioClip hitSound;
     private Vector3 animationOffset = Vector3.forward * -0.5f;
 
     private Vector2 direction;
 
     private void Start()
     {
+        direction = gameObject.transform.right;
         Destroy(gameObject, lifetime);
-    }
-
-    public void Initialize(Vector2 shootDirection)
-    {
-        direction = shootDirection.normalized;
     }
 
     private void Update()
@@ -40,7 +36,7 @@ public class ProjectileScript : MonoBehaviour
         float angle = Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg - 90f;
         GameObject explosion = Instantiate(explosionPrefab, transform.position + animationOffset, Quaternion.AngleAxis(angle, Vector3.forward));
         explosion.transform.localScale = new Vector3(1.5f, 1.5f, 1f);
-        explosion.GetComponent<ExplosionVisualScript>().Playexplosion(hitClip);
+        explosion.GetComponent<ExplosionScript>().Playexplosion(hitClip, hitSound);
         Destroy(gameObject);
     }
 } 
