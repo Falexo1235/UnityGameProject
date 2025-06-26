@@ -5,10 +5,15 @@ public class DrillScript : MonoBehaviour, IUsableItem
     [Header("Drill Settings")]
     public float drillSpeed = 1f;
     public Collider2D drillTrigger;
-    
+    public Animator drillAnimator;
+
     private bool isDrilling = false;
     private float nextDrillTime;
 
+    void Start()
+    {
+        drillAnimator.speed = 0;
+    }
     public void UseStart()
     {
     }
@@ -31,11 +36,13 @@ public class DrillScript : MonoBehaviour, IUsableItem
     {
         isDrilling = true;
         nextDrillTime = Time.time;
+        drillAnimator.speed = 2;
     }
 
     private void StopDrilling()
     {
         isDrilling = false;
+        drillAnimator.speed = 0;
     }
 
     private void TryDrill()

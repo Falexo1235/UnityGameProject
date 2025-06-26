@@ -15,12 +15,17 @@ public class MissileScript : MonoBehaviour
     public float bounceForce = 5f;
     public float mazeLifetimeReduction = 2f;
     
+    [Header("Explosion settings")]
+    public AnimationClip explosionClip;
+    public GameObject explosionPrefab;
+
     private Rigidbody2D rb;
     private Camera mainCamera;
     private bool isInMazeMode = false;
     private float originalThrustForce;
     private float originalMaxSpeed;
     private Vector2 lastVelocity;
+    private Vector3 animationOffset = Vector3.forward * -0.5f;
 
     void Awake()
     {
@@ -54,6 +59,8 @@ public class MissileScript : MonoBehaviour
         lifetime -= Time.fixedDeltaTime * lifetimeDecayMultiplier;
         if (lifetime <= 0)
         {
+            GameObject explosion = Instantiate(explosionPrefab, transform.position + animationOffset, Quaternion.identity);
+            explosion.GetComponent<ExplosionVisualScript>().Playexplosion(explosionClip);
             Destroy(gameObject);
             return;
         }
@@ -73,11 +80,11 @@ public class MissileScript : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         MissileInteractable hitScript = collision.collider.GetComponent<MissileInteractable>();
         if (hitScript != null)
         {
             hitScript.Activate();
-            Destroy(gameObject);
         }
 
         if (isInMazeMode)
@@ -92,11 +99,15 @@ public class MissileScript : MonoBehaviour
             Debug.Log(lifetime);
             if (lifetime <= 0)
             {
+                GameObject explosion = Instantiate(explosionPrefab, transform.position + animationOffset, Quaternion.identity);
+                explosion.GetComponent<ExplosionVisualScript>().Playexplosion(explosionClip);
                 Destroy(gameObject);
             }
         }
         else
         {
+            GameObject explosion = Instantiate(explosionPrefab, transform.position + animationOffset, Quaternion.identity);
+            explosion.GetComponent<ExplosionVisualScript>().Playexplosion(explosionClip);
             Destroy(gameObject);
         }
     }
