@@ -74,7 +74,7 @@ public class GrabScript : MonoBehaviour
             grabJoint.maxDistanceOnly = true;
             grabJoint.distance = 0.1f;
             grabJoint.autoConfigureDistance = false;
-            grabJoint.enableCollision = true;
+            grabJoint.enableCollision = false;
             isGrabbing = true;
             spriteScript.SetColor(2);
             audioSource.PlayOneShot(grabSound);
