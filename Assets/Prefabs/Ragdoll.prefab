@@ -387,6 +387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8654861603171322472}
   - component: {fileID: 7941905434834969621}
+  - component: {fileID: 5288236311331555881}
   m_Layer: 0
   m_Name: collider
   m_TagString: Untagged
@@ -445,6 +446,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.3203458, y: 0}
   m_Radius: 0.1796542
+--- !u!114 &5288236311331555881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726546298731673143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49d1f7840301e84499a5dd4b03da9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &786393783967355830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2485,6 +2498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3785465479953549437}
   - component: {fileID: 6307304031031683141}
+  - component: {fileID: 137687261956426606}
   m_Layer: 0
   m_Name: collider
   m_TagString: Untagged
@@ -2543,6 +2557,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.3203458, y: 0}
   m_Radius: 0.1796542
+--- !u!114 &137687261956426606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4782205371944938870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49d1f7840301e84499a5dd4b03da9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4860753717053819893
 GameObject:
   m_ObjectHideFlags: 0
