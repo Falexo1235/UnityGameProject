@@ -1,0 +1,395 @@
+fileFormatVersion: 2
+guid: f09c1b00bf730304a8592917e4342c8a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5762846779237527487
+    second: ProjectileHitSprite_0
+  - first:
+      213: -7289042270150110763
+    second: ProjectileHitSprite_1
+  - first:
+      213: 3870402666377749382
+    second: ProjectileHitSprite_2
+  - first:
+      213: -8657471318484743967
+    second: ProjectileHitSprite_3
+  - first:
+      213: -6849399686670569187
+    second: ProjectileHitSprite_4
+  - first:
+      213: 1673871735410934205
+    second: ProjectileHitSprite_5
+  - first:
+      213: -7463535416461198416
+    second: ProjectileHitSprite_6
+  - first:
+      213: -8370969046767099546
+    second: ProjectileHitSprite_7
+  - first:
+      213: -4304661679720005433
+    second: ProjectileHitSprite_8
+  - first:
+      213: -1051629977120743895
+    second: ProjectileHitSprite_9
+  - first:
+      213: -1026105914495066815
+    second: ProjectileHitSprite_10
+  - first:
+      213: -7596967607333827212
+    second: ProjectileHitSprite_11
+  - first:
+      213: -3127183994658339642
+    second: ProjectileHitSprite_12
+  - first:
+      213: 3123675986243006640
+    second: ProjectileHitSprite_13
+  - first:
+      213: -3013898232755331664
+    second: ProjectileHitSprite_14
+  - first:
+      213: 1554640772782959369
+    second: ProjectileHitSprite_15
+  - first:
+      213: -483943592755308333
+    second: ProjectileHitSprite_16
+  - first:
+      213: 410713567570398424
+    second: ProjectileHitSprite_17
+  - first:
+      213: 1007859449407081686
+    second: ProjectileHitSprite_18
+  - first:
+      213: 5981201778870853157
+    second: ProjectileHitSprite_19
+  - first:
+      213: -4111279554671475259
+    second: ProjectileHitSprite_20
+  - first:
+      213: 4970208348713978235
+    second: ProjectileHitSprite_21
+  - first:
+      213: 3211611453525678826
+    second: ProjectileHitSprite_22
+  - first:
+      213: -6508401691948998857
+    second: ProjectileHitSprite_23
+  - first:
+      213: -6870217902616611488
+    second: ProjectileHitSprite_24
+  - first:
+      213: 2936856763907935938
+    second: ProjectileHitSprite_25
+  - first:
+      213: 1214037170232219831
+    second: ProjectileHitSprite_26
+  - first:
+      213: -8979813712711710510
+    second: ProjectileHitSprite_27
+  - first:
+      213: -6004701834662148033
+    second: ProjectileHitSprite_28
+  - first:
+      213: 8507884699459407594
+    second: ProjectileHitSprite_29
+  - first:
+      213: 7920831159126465349
+    second: ProjectileHitSprite_30
+  - first:
+      213: -6502802646247542656
+    second: ProjectileHitSprite_31
+  - first:
+      213: 5250406855117627233
+    second: ProjectileHitSprite_32
+  - first:
+      213: 1743724116318881147
+    second: ProjectileHitSprite_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ProjectileHitSprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 50
+        width: 140
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbfe473ec9eb9ff40800000000000000
+      internalID: 5762846779237527487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ProjectileHitSprite_1
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 50
+        width: 140
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d155ee9cae18da90800000000000000
+      internalID: -7289042270150110763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ProjectileHitSprite_2
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 50
+        width: 140
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebfc1041f528345488dc3f7f2c2b1ab9
+      internalID: 3870402666377749382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ProjectileHitSprite_3
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 50
+        width: 140
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35dc85323abc1c4485ff4fd46a45ae7
+      internalID: -8657471318484743967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ProjectileHitSprite_4
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 50
+        width: 140
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d38afd832f0f04d9ae87a0f2bb3343
+      internalID: -6849399686670569187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ProjectileHitSprite_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 140
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45d550c92272c4e419fcc8fa18d4372b
+      internalID: -1571527502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ProjectileHitSprite_6
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 140
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a3c264a5539b642b78c68af08d7372
+      internalID: -91224589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8fc3caa9745d6584c870c57b2f214607
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":2.0},"gridSpriteSize":{"x":140.0,"y":50.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      ProjectileHitSprite_0: 5762846779237527487
+      ProjectileHitSprite_1: -7289042270150110763
+      ProjectileHitSprite_2: 3870402666377749382
+      ProjectileHitSprite_3: -8657471318484743967
+      ProjectileHitSprite_4: -6849399686670569187
+      ProjectileHitSprite_5: -1571527502
+      ProjectileHitSprite_6: -91224589
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
