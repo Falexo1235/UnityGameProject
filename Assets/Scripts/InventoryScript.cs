@@ -71,6 +71,11 @@ public class InventoryScript : MonoBehaviour
 
         if (itemIndex == currentItemIndex)
             return;
+        if (availableItems[itemIndex] == null)
+        {
+            RemoveCurrentItem();
+            return;
+        }
 
         currentItemIndex = itemIndex;
         UpdateItemInHand();
