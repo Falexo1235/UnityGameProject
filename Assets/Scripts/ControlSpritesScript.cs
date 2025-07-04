@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 public class ControlSpritesScript : MonoBehaviour
 {
     public GameObject hand;
@@ -8,13 +9,13 @@ public class ControlSpritesScript : MonoBehaviour
     private Color pressedColor = Color.orange;
     private Color grabbedColor = Color.green;
     private Color currentColor;
-    private SpriteRenderer sr;
+    private Image imageComponent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
+        imageComponent = GetComponent<Image>();
         currentColor = defaultColor;
-        sr.color = currentColor;
+        imageComponent.color = currentColor;
         mainCamera = Camera.main;
     }
 
@@ -23,10 +24,10 @@ public class ControlSpritesScript : MonoBehaviour
     {
         Vector3 cameraRotation = mainCamera.transform.rotation.eulerAngles;
         transform.rotation = Quaternion.Euler(0, 0, cameraRotation.z);
-        transform.position = hand.transform.position-Vector3.forward/2;
+        transform.position = Camera.main.WorldToScreenPoint(hand.transform.position);
         if (Input.GetKeyDown(toggleKey))
         {
-            GetComponent<SpriteRenderer>().enabled = !GetComponent<SpriteRenderer>().enabled;
+            imageComponent.enabled = !imageComponent.enabled;
         }
     }
 
@@ -35,13 +36,13 @@ public class ControlSpritesScript : MonoBehaviour
         switch (color)
         {
             case 0:
-                sr.color = defaultColor;
+                imageComponent.color = defaultColor;
                 break;
             case 1:
-                sr.color = pressedColor;
+                imageComponent.color = pressedColor;
                 break;
             case 2:
-                sr.color = grabbedColor;
+                imageComponent.color = grabbedColor;
                 break;
         }
     }

@@ -3,22 +3,29 @@ using UnityEngine.UI;
 
 public class ToolPickupScript : MonoBehaviour
 {
-    public Image menuOption;
     public Sprite newIcon;
-    public InventoryScript inventoryScript;
     public int index;
     public GameObject itemPrefab;
     public GameObject explosionPrefab;
     public AudioClip itemSound;
     public AnimationClip itemClip;
     private Vector3 animationOffset = Vector3.forward * -0.5f;
+    private InventoryScript inventoryScript;
 
+    private void Awake()
+    {
+        GameObject inventoryManager = GameObject.Find("InventoryManager");
+        if (inventoryManager != null)
+        {
+            inventoryScript = inventoryManager.GetComponent<InventoryScript>();
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerTag playerPart = collision.GetComponent<PlayerTag>();
         if (playerPart != null)
         {
-            menuOption.sprite = newIcon;
+            inventoryScript.itemIcons[index].sprite = newIcon;
 
             inventoryScript.availableItems[index] = itemPrefab;
 

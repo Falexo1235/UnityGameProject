@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class InventoryScript : MonoBehaviour
 {
     public static InventoryScript Instance { get; private set; }
@@ -12,7 +12,7 @@ public class InventoryScript : MonoBehaviour
     //Do not put useful items in index 0, that index is used to select hands
     public GameObject[] availableItems;
     public float[] maxItemCharges; //Max charge for each item. Easier to do it that way, than to try finding out if an item has charge
-    
+    public Image[] itemIcons;
     private GameObject leftHandItem;
     private GameObject rightHandItem;
     private bool isRightHandActive = true;
@@ -74,6 +74,7 @@ public class InventoryScript : MonoBehaviour
         if (availableItems[itemIndex] == null)
         {
             RemoveCurrentItem();
+            currentItemIndex = -1;
             return;
         }
 
