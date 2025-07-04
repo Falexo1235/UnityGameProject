@@ -1,10 +1,31 @@
 fileFormatVersion: 2
-guid: 1db7561f321a76640a4e515f677f58c2
+guid: 01e8071cda1a09b489ddc5bbca0cb08e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2823567687765095263
-    second: vignette_0
+      213: 5163860803842968098
+    second: level_2_layer_0
+  - first:
+      213: -2741927912313143340
+    second: level_2_layer_1
+  - first:
+      213: 3579963523790598407
+    second: level_2_layer_2
+  - first:
+      213: -5679809569156324204
+    second: level_2_layer_3
+  - first:
+      213: -7506040673704347048
+    second: level_2_layer_4
+  - first:
+      213: 2289633745633145576
+    second: level_2_layer_5
+  - first:
+      213: -3722639215701430023
+    second: level_2_layer_6
+  - first:
+      213: 2889801769380951348
+    second: level_2_layer_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +93,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -113,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vignette_0
+      name: level_2_layer_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 2563
+        y: 2070
+        width: 1031
+        height: 962
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +149,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f5372842ad35f2720800000000000000
-      internalID: 2823567687765095263
+      spriteID: 9f07d215b57865cc0800000000000000
+      internalID: -3722639215701430023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_2_layer_7
+      rect:
+        serializedVersion: 2
+        x: 3745
+        y: 3804
+        width: 1592
+        height: 776
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc451cadafb3214fba74778461d2506
+      internalID: 2889801769380951348
       vertices: []
       indices: 
       edges: []
@@ -138,7 +181,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +189,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      vignette_0: 2823567687765095263
+      level_2_layer_0: 5163860803842968098
+      level_2_layer_1: -2741927912313143340
+      level_2_layer_2: 3579963523790598407
+      level_2_layer_3: -5679809569156324204
+      level_2_layer_4: -7506040673704347048
+      level_2_layer_5: 2289633745633145576
+      level_2_layer_6: -3722639215701430023
+      level_2_layer_7: 2889801769380951348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1db7561f321a76640a4e515f677f58c2
+guid: 2e687c263ed845f4b950c9b92dadbfd7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2823567687765095263
-    second: vignette_0
+      213: -925345978958199149
+    second: meteor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vignette_0
+      name: meteor_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 31
+        y: 127
+        width: 1506
+        height: 1058
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f5372842ad35f2720800000000000000
-      internalID: 2823567687765095263
+      spriteID: 3964cdd1cb28823f0800000000000000
+      internalID: -925345978958199149
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      vignette_0: 2823567687765095263
+      meteor_0: -925345978958199149
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

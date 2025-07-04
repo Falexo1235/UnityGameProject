@@ -23,6 +23,17 @@ public class InventoryScript : MonoBehaviour
 
     private float[] currentItemCharges; //Current item charges
     
+    [Header("Player Health")]
+    public int maxHealth = 3;
+    public int currentHealth;
+    public Image[] heartImages;
+    public Sprite fullHeartSprite;
+    public Sprite depletedHeartSprite;
+    private float lastDamageTime = -100f;
+    private float damageCooldown = 1f;
+    private float lastRegenAttemptTime = 0f;
+    private float regenDelay = 15f;
+
     private void Awake()
     {
         Instance = this;
@@ -40,6 +51,12 @@ public class InventoryScript : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        currentHealth = maxHealth;
+        UpdateHeartsUI();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -48,6 +65,7 @@ public class InventoryScript : MonoBehaviour
         }
 
         RegenerateAllItemCharges();
+        HandleHealthRegen();
     }
 
     
@@ -259,6 +277,43 @@ public class InventoryScript : MonoBehaviour
                     currentItemCharges[i] += regenRate * Time.deltaTime;
                     currentItemCharges[i] = Mathf.Clamp(currentItemCharges[i], 0, maxItemCharges[i]);
                 }
+            }
+        }
+    }
+
+    public void TakeDamage(int amount = 1)
+    {
+        if (Time.time - lastDamageTime < damageCooldown) return;
+        if (currentHealth <= 0) return;
+        currentHealth -= amount;
+        currentHealth = Mathf.Max(currentHealth, 0);
+        lastDamageTime = Time.time;
+        UpdateHeartsUI();
+        lastRegenAttemptTime = Time.time;
+    }
+
+    private void HandleHealthRegen()
+    {
+        if (currentHealth < maxHealth && Time.time - lastDamageTime > regenDelay)
+        {
+            currentHealth++;
+            currentHealth = Mathf.Min(currentHealth, maxHealth);
+            UpdateHeartsUI();
+            lastDamageTime = Time.time;
+        }
+    }
+
+    private void UpdateHeartsUI()
+    {
+        for (int i = 0; i < heartImages.Length; i++)
+        {
+            if (i < currentHealth)
+            {
+                heartImages[i].sprite = fullHeartSprite;
+            }
+            else
+            {
+                heartImages[i].sprite = depletedHeartSprite;
             }
         }
     }

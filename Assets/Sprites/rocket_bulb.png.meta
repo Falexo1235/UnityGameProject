@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1db7561f321a76640a4e515f677f58c2
+guid: 4ccf5a013faf94c4d985d7b5074f7d31
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2823567687765095263
-    second: vignette_0
+      213: 3391712162022070297
+    second: rocket_bulb_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vignette_0
+      name: rocket_bulb_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 84
+        height: 91
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f5372842ad35f2720800000000000000
-      internalID: 2823567687765095263
+      spriteID: 91892b5cd38c11f20800000000000000
+      internalID: 3391712162022070297
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      vignette_0: 2823567687765095263
+      rocket_bulb_0: 3391712162022070297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

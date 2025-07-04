@@ -31,6 +31,12 @@ public class LaserBeamScript : MonoBehaviour
 
             if (hit.collider != null)
             {
+                if (hit.collider.isTrigger)
+                {
+                    remainingLength -= hit.distance;
+                    currentPosition = hit.point;
+                    continue;
+                }
                 linePoints.Add(transform.InverseTransformPoint(hit.point));
                 remainingLength -= hit.distance;
                 
