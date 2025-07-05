@@ -16,8 +16,8 @@ public class LimbControlScript : MonoBehaviour
         mainCamera = Camera.main;
         reversed = (reverseEndPoint ? -1 : 1);
     }
-
-    void Update()
+    
+    void FixedUpdate()
     {
         float targetSpeed = 0f;
 
