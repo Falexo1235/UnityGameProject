@@ -26,7 +26,6 @@ public class ToolPickupScript : MonoBehaviour
         if (playerPart != null)
         {
             inventoryScript.itemIcons[index].sprite = newIcon;
-
             inventoryScript.availableItems[index] = itemPrefab;
 
             GameObject explosion = Instantiate(explosionPrefab, transform.position + animationOffset, Quaternion.identity);

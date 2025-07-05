@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 public class InventoryScript : MonoBehaviour
 {
     public static InventoryScript Instance { get; private set; }
@@ -30,9 +31,10 @@ public class InventoryScript : MonoBehaviour
     public Sprite fullHeartSprite;
     public Sprite depletedHeartSprite;
     private float lastDamageTime = -100f;
-    private float damageCooldown = 1f;
+    private float damageCooldown = 3f;
     private float lastRegenAttemptTime = 0f;
-    private float regenDelay = 15f;
+    private float regenDelay = 5f;
+    public UnityEvent events;
 
     private void Awake()
     {
@@ -288,8 +290,13 @@ public class InventoryScript : MonoBehaviour
         currentHealth -= amount;
         currentHealth = Mathf.Max(currentHealth, 0);
         lastDamageTime = Time.time;
+        gameObject.GetComponent<AudioSource>().Play();
         UpdateHeartsUI();
         lastRegenAttemptTime = Time.time;
+        if (currentHealth <= 0)
+        {
+            events?.Invoke();
+        }
     }
 
     private void HandleHealthRegen()

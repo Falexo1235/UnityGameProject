@@ -11,6 +11,7 @@ public class MissileTimescaleScript : MonoBehaviour
     private SmoothCameraScript smoothCam;
     private float originalZoom;
     
+   
     void Start()
     {
         followCamera = Camera.main;

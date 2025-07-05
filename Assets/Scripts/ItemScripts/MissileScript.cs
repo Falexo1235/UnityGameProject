@@ -84,7 +84,6 @@ public class MissileScript : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
         MissileInteractable hitScript = collision.collider.GetComponent<MissileInteractable>();
         if (hitScript != null)
         {
